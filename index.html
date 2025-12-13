@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Alana Lisbinski</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">  
+
     <link rel="icon" type="image/png" href="imagens/div.png">
 </head>
 <body>
@@ -36,8 +37,18 @@
             <button class="btn-ver">Visualizar</button>
             </a>
         </div>
+        <div>
+        </div>
     </div>
 </section>
+
+<h2 class="titulo-sec-skills">Skills</h2>
+<div class="skills-grid" id="skills-container">
+    <div class="skill-item" data-language="Javascript" data-percent="66" data-color="#748B91"></div>
+    <div class="skill-item" data-language="Python" data-percent="30" data-color="#748B91"></div>
+    <div class="skill-item" data-language="TypeScript" data-percent="10" data-color="#748B91"></div>
+    <div class="skill-item" data-language="C++" data-percent="30" data-color="#748B91"></div>
+</div>
 
 <h2 class="titulo-time">Timeline</h2>
 <div class="timeline">
@@ -52,9 +63,34 @@
     </div>
   </div>
   </div>
+
+  <script>
+    document.querySelectorAll(".skill-item").forEach(skill => {
+    const percent = skill.getAttribute("data-percent");
+    const color = skill.getAttribute("data-color");
+    const language = skill.getAttribute("data-language");
+
+    skill.innerHTML = `
+        <svg>
+            <circle class="skill-bg" cx="80" cy="80" r="70"></circle>
+            <circle class="skill-progress" cx="80" cy="80" r="70" stroke="${color}"></circle>
+        </svg>
+        <div class="skill-label">
+            ${language}<br>${percent}%
+        </div>
+    `;
+
+    const progressCircle = skill.querySelector(".skill-progress");
+    const dashOffset = 440 - (440 * percent) / 100;
+
+    setTimeout(() => {
+        progressCircle.style.strokeDashoffset = dashOffset;
+    }, 300);
+});
+</script>
+
 <footer class="footer">
     <p>E-mail: contato.alanalisbinski@gmail.com</p>
 </footer>
 </body>
-
 </html>
