@@ -331,10 +331,25 @@ body {
     line-height: 1.2;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
+    .sobre-content {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+        align-items: center;
+        text-align: center;
+    }
+
     .sobre-foto img {
         width: 180px;
         height: 180px;
+        margin: 0 auto;
+    }
+
+    .sobre-texto {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 10px;
     }
 
     .sobre-texto h2 {
@@ -344,13 +359,13 @@ body {
     .sobre-texto p {
         font-size: 1rem;
         text-align: justify;
-        padding: 0 10px;
     }
 
     .btn-contato {
         padding: 10px 25px;
+        font-size: 1rem;
     }
-
+    
     .grid-projetos {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -366,3 +381,4 @@ body {
         padding: 20px 0;
     }
 }
+
