@@ -38,7 +38,7 @@ body {
     justify-content: center;
     gap: 170px;
     max-width: 1000px;
-    width: 100%; 
+    width: 100%;
     padding: 0 40px;
 }
 
@@ -88,12 +88,6 @@ body {
     text-align: center;
 }
 
-.titulo-sec {
-    font-size: 30px;
-    margin-bottom: 40px;
-    color: #4A7FA7;
-}
-
 .grid-projetos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -114,7 +108,7 @@ body {
 
 .projeto-card img {
     width: 100%;
-    height: auto; 
+    height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -154,7 +148,7 @@ body {
 }
 
 .timeline-background {
-    background-color: #1e2629; 
+    background-color: #1e2629;
     padding: 80px 0;
 }
 
@@ -167,7 +161,7 @@ body {
 .timeline {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px; 
+    padding: 0 20px;
     position: relative;
     text-align: left;
 }
@@ -177,49 +171,49 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 3px; 
-    background-color: #4A7FA7; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    background-color: #4A7FA7;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 40px; 
-    width: 50%; 
-    padding: 10px 0; 
-    padding-right: 50px; 
+    margin-bottom: 40px;
+    width: 50%;
+    padding: 10px 0;
+    padding-right: 50px;
     text-align: right;
 }
 
 .timeline-item:nth-child(even) {
-    left: 50%; 
-    padding-left: 50px; 
-    padding-right: 0; 
+    left: 50%;
+    padding-left: 50px;
+    padding-right: 0;
     text-align: left;
 }
 
 .timeline-dot {
     position: absolute;
-    top: 20px; 
+    top: 20px;
     width: 15px;
     height: 15px;
-    background-color: #4A7FA7; 
-    border-radius: 50%; 
-    border: 3px solid #171F22; 
+    background-color: #4A7FA7;
+    border-radius: 50%;
+    border: 3px solid #171F22;
     z-index: 10;
 }
 
 .timeline-item .timeline-dot {
-    right: -7.5px; 
+    right: -7.5px;
 }
 
 .timeline-item:nth-child(even) .timeline-dot {
-    left: -7.5px; 
+    left: -7.5px;
 }
 
 .timeline-content {
-    background-color: #1e2629; 
+    background-color: #1e2629;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid rgba(74, 127, 167, 0.3);
@@ -252,20 +246,20 @@ body {
 
 @media (max-width: 600px) {
     .timeline::before {
-        left: 20px; 
+        left: 20px;
         transform: none;
     }
 
     .timeline-item, .timeline-item:nth-child(even) {
         width: 100%;
         left: 0;
-        padding-left: 50px; 
+        padding-left: 50px;
         padding-right: 0;
         text-align: left;
     }
 
     .timeline-item .timeline-dot, .timeline-item:nth-child(even) .timeline-dot {
-        left: 12.5px; 
+        left: 12.5px;
         right: auto;
     }
 }
@@ -281,35 +275,60 @@ body {
     font-size: 1rem;
 }
 
-@media (max-width: 900px) {
-    .sobre-content {
-        flex-direction: column;
-        gap: 40px;
-        padding: 0 20px;
-    }
-
-    .sobre-texto {
-        max-width: 600px; 
-        text-align: center;
-    }
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 60px 0 100px 0;
 }
 
-@media (max-width: 768px) {
-    .projetos {
-        margin-top: 60px;
-    }
+.titulo-sec-skills {
+    text-align: center; 
+    font-size: 32px;
+    color: #4A7FA7;
+    margin-bottom: 40px; 
+}
 
-    .grid-projetos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        width: 100%;
-        padding: 0 20px;
-    }
+.skill-item {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .titulo-sec {
-        font-size: 28px;
-        margin-bottom: 30px;
-    }
+.skill-item svg {
+    width: 160px;
+    height: 160px;
+    transform: rotate(-90deg);
+    position: absolute;
+}
+
+.skill-bg {
+    fill: none;
+    stroke: #1f2a2d;
+    stroke-width: 22;
+}
+
+.skill-progress {
+    fill: none;
+    stroke-width: 22;
+    stroke-linecap: round;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transition: stroke-dashoffset 1.5s ease;
+}
+
+.skill-label {
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.2;
 }
 
 @media (max-width: 550px) {
@@ -321,7 +340,7 @@ body {
     .sobre-texto h2 {
         font-size: 26px;
     }
-    
+
     .sobre-texto p {
         font-size: 1rem;
         text-align: justify;
@@ -341,7 +360,7 @@ body {
     .projeto-card h3 {
         font-size: 18px;
     }
-    
+
     .footer {
         margin-top: 60px;
         padding: 20px 0;
