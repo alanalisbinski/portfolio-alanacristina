@@ -95,7 +95,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding-top: 20px;
 }
 
 .projeto-card {
@@ -381,6 +381,7 @@ body {
         padding: 20px 0;
     }
 }
+
 
 
 
