@@ -12,7 +12,7 @@ A ideia é reunir em um só lugar meus principais projetos, experiências e apre
 - Frontend: [HTML/CSS/JS]
 - Backend: [Node.js/Python]
 - Banco de dados: [MySQL]
-- Ferramentas: [Git]
+- Ferramentas: [Git/GitHub/VS Code]
   
 🚀 Funcionalidades
 - Página inicial com resumo sobre mim
