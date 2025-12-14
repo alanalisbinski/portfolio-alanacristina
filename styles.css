@@ -100,7 +100,7 @@ body {
 
 .projeto-card {
     background: #1e2629;
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
@@ -381,4 +381,5 @@ body {
         padding: 20px 0;
     }
 }
+
 
