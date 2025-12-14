@@ -82,6 +82,12 @@ body {
     opacity: 0.8;
 }
 
+.titulo-projetos {
+    font-size: 32px;
+    color: #748B91;
+    margin-bottom: 40px;
+}
+
 .projetos {
     margin-top: 50px;
     margin-bottom: 150px;
@@ -381,6 +387,7 @@ body {
         padding: 20px 0;
     }
 }
+
 
 
 
