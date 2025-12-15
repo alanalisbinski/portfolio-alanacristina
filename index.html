@@ -43,30 +43,52 @@
     </div>
 </section>
 
-<section class="skills-section" id="skills">
-    <h2 class="titulo-sec-skills">Minhas Skills</h2>
+<!-- ===== SKILLS COM BARRAS ===== -->
+<section class="skills-section">
+    <h2 class="skills-title">Minhas Skills</h2>
     
-    <div class="skills-grid">
-        <div class="skill-circle" data-percent="95" data-color="#E34F26" data-language="HTML/CSS">
+    <div class="skill">
+        <div class="skill-name">
+            <span>HTML/CSS</span>
+            <span class="skill-percent">95%</span>
         </div>
-        
-        <div class="skill-circle" data-percent="85" data-color="#F7DF1E" data-language="JavaScript">
+        <div class="skill-bar">
+            <div class="skill-level" data-width="95"></div>
         </div>
-        
-        <div class="skill-circle" data-percent="80" data-color="#61DAFB" data-language="React">
+    </div>
+    
+    <div class="skill">
+        <div class="skill-name">
+            <span>JavaScript</span>
+            <span class="skill-percent">85%</span>
         </div>
-        
-        <div class="skill-circle" data-percent="75" data-color="#3776AB" data-language="Python">
+        <div class="skill-bar">
+            <div class="skill-level" data-width="85"></div>
         </div>
-
-        <div class="skill-circle" data-percent="70" data-color="#00599C" data-language="C++">
+    </div>
+    
+    <div class="skill">
+        <div class="skill-name">
+            <span>React</span>
+            <span class="skill-percent">80%</span>
         </div>
-
-        <div class="skill-circle" data-percent="90" data-color="#F05032" data-language="Git">
+        <div class="skill-bar">
+            <div class="skill-level" data-width="80"></div>
+        </div>
+    </div>
+    
+    <div class="skill">
+        <div class="skill-name">
+            <span>Python</span>
+            <span class="skill-percent">75%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-level" data-width="75"></div>
         </div>
     </div>
 </section>
 
+<!-- ===== TIMELINE ===== -->
 <h2 class="titulo-time">Timeline</h2>
 <div class="timeline">
   <div class="timeline-item">
@@ -85,89 +107,18 @@
     <p>E-mail: contato.alanalisbinski@gmail.com</p>
 </footer>
 
+<!-- ===== SCRIPT DAS SKILLS ===== -->
 <script>
+// Anima as barras quando a página carrega
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎯 Iniciando animação dos círculos...');
-    document.querySelectorAll('.skill-circle').forEach(skill => {
-        const percent = skill.getAttribute('data-percent');
-        const color = skill.getAttribute('data-color');
-        const language = skill.getAttribute('data-language');
-        
-        skill.innerHTML = `
-            <svg viewBox="0 0 200 200">
-                <circle class="skill-bg" cx="100" cy="100" r="90"></circle>
-                <circle class="skill-progress" 
-                        cx="100" 
-                        cy="100" 
-                        r="90" 
-                        stroke="${color}"
-                        style="stroke-dashoffset: 440;"></circle>
-            </svg>
-            <div class="skill-label">
-                ${language}<br>
-                <span class="skill-percent">${percent}%</span>
-            </div>
-        `;
-    });
-
-    function animateCircles() {
-        console.log('🔄 Animando círculos...');
-        
-        document.querySelectorAll('.skill-circle').forEach(skill => {
-            const percent = skill.getAttribute('data-percent');
-            const progressCircle = skill.querySelector('.skill-progress');
-        
-            const radius = 90;
-            const circumference = 2 * Math.PI * radius;
-            const offset = circumference - (percent / 100) * circumference;
-            
-            setTimeout(() => {
-                progressCircle.style.strokeDasharray = circumference;
-                progressCircle.style.strokeDashoffset = offset;
-                
-                // Efeito visual extra
-                skill.style.transform = 'scale(1.05)';
-                setTimeout(() => {
-                    skill.style.transform = 'scale(1)';
-                }, 300);
-            }, 100);
+    setTimeout(function() {
+        document.querySelectorAll('.skill-level').forEach(bar => {
+            const width = bar.getAttribute('data-width') + '%';
+            bar.style.width = width;
         });
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                console.log('👀 Seção skills visível!');
-                animateCircles();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-    
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) {
-        observer.observe(skillsSection);
-    } else {
-        setTimeout(animateCircles, 1000);
-    }
-    
-    window.addEventListener('load', function() {
-        setTimeout(animateCircles, 500);
-    });
+    }, 300);
 });
-
-setTimeout(() => {
-    const circles = document.querySelectorAll('.skill-progress');
-    if (circles.length > 0 && circles[0].style.strokeDashoffset === '440px') {
-        console.log('🆘 Executando fallback...');
-        document.querySelectorAll('.skill-circle').forEach(skill => {
-            const percent = skill.getAttribute('data-percent');
-            const progressCircle = skill.querySelector('.skill-progress');
-            const offset = 440 - (440 * percent) / 100;
-            progressCircle.style.strokeDashoffset = offset;
-        });
-    }
-}, 3000);
 </script>
+
 </body>
 </html>
