@@ -41,13 +41,23 @@
     </div>
 </section>
 
-<h2 class="titulo-sec-skills">Skills</h2>
-<div class="skills-grid" id="skills-container">
-    <div class="skill-item" data-language="Javascript" data-percent="66" data-color="#748B91"></div>
-    <div class="skill-item" data-language="Python" data-percent="30" data-color="#748B91"></div>
-    <div class="skill-item" data-language="TypeScript" data-percent="10" data-color="#748B91"></div>
-    <div class="skill-item" data-language="C++" data-percent="30" data-color="#748B91"></div>
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><i class="devicon-html5-plain colored"></i></div>
+        <div class="swiper-slide"><i class="devicon-css3-plain colored"></i></div>
+        <div class="swiper-slide"><i class="devicon-javascript-plain colored"></i></div>
+        <div class="swiper-slide"><i class="devicon-c++-´plain colored"></i></div>
+    </div>
 </div>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        autoplay: { delay: 1000 },
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+    });
+</script>
 
 <h2 class="titulo-time">Timeline</h2>
 <div class="timeline">
