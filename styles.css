@@ -10,7 +10,6 @@ body {
     color: #748B91;
 }
 
-/* ===== HEADER ===== */
 .header {
     width: 100%;
     text-align: center;
@@ -27,7 +26,6 @@ body {
     color: #ffffff;
 }
 
-/* ===== SOBRE MIM ===== */
 .sobre-wrapper {
     width: 100%;
     display: flex;
@@ -88,7 +86,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* ===== PROJETOS ===== */
 .projetos {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -164,7 +161,6 @@ body {
     background: #3a6f97;
 }
 
-/* ===== SKILLS COM BARRAS ===== */
 .skills-section {
     max-width: 700px;
     margin: 80px auto;
@@ -238,7 +234,6 @@ body {
     100% { transform: translateX(100%); }
 }
 
-/* ===== TIMELINE ===== */
 .titulo-time {
     text-align: center;
     font-size: 32px;
@@ -347,7 +342,6 @@ body {
     margin-top: 10px;
 }
 
-/* ===== FOOTER ===== */
 .footer {
     text-align: center;
     padding: 25px 0;
@@ -361,9 +355,7 @@ body {
     color: #748B91;
 }
 
-/* ===== RESPONSIVO ===== */
 @media (max-width: 600px) {
-    /* Sobre Mim */
     .sobre-content {
         flex-direction: column;
         gap: 30px;
@@ -398,7 +390,6 @@ body {
         font-size: 1rem;
     }
     
-    /* Projetos */
     .grid-projetos {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -409,7 +400,6 @@ body {
         font-size: 20px;
     }
 
-    /* Skills */
     .skills-section {
         margin: 50px auto;
         padding: 0 15px;
@@ -423,7 +413,6 @@ body {
         height: 12px;
     }
 
-    /* Timeline */
     .timeline::before {
         left: 20px;
         transform: none;
@@ -442,7 +431,6 @@ body {
         right: auto;
     }
 
-    /* Footer */
     .footer {
         margin-top: 60px;
         padding: 20px 0;
@@ -453,7 +441,6 @@ body {
     }
 }
 
-/* ===== ANIMAÇÕES GLOBAIS ===== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
