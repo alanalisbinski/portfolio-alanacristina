@@ -1,25 +1,8 @@
-const container = document.getElementById("skills-container");
+console.log('Seção skills:', document.getElementById('skills'));
+console.log('Barras de progresso:', document.querySelectorAll('.skill-progress').length);
+console.log('Barras de fundo:', document.querySelectorAll('.skill-bar').length);
 
-skills.forEach(skill => {
-  const skillDiv = document.createElement("div");
-  skillDiv.className = "skill-item";
-
-const skills = [
-  { name: "JavaScript", level: 82 },
-  { name: "Python", level: 75 },
-  { name: "TypeScript", level: 70 },
-  { name: "C++", level: 60 }
-];
-
-container.appendChild(skillDiv);
-
-  const progressCircle = skillDiv.querySelector(".skill-progress");
-  const circumference = 2 * Math.PI * 70;
-  progressCircle.style.strokeDasharray = circumference;
-
-  const offset = circumference - (skill.level / 100) * circumference;
-
-  setTimeout(() => {
-    progressCircle.style.strokeDashoffset = offset;
-  }, 300);
+document.querySelectorAll('.skill-progress').forEach(bar => {
+    bar.style.width = bar.getAttribute('data-level') + '%';
+    bar.style.backgroundColor = 'red';
 });

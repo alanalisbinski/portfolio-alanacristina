@@ -7,49 +7,11 @@
     <link rel="stylesheet" href="styles.css">  
     <link rel="icon" type="image/png" href="imagens/div.png">
 </head>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const skillProgressBars = document.querySelectorAll('.skill-progress');
-    
-    function animateSkills() {
-        skillProgressBars.forEach(bar => {
-            const level = bar.getAttribute('data-level');
-            bar.style.width = level + '%';
-        });
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkills();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.3 
-    });
-    
-    const skillsSection = document.querySelector('.skills-section');
-    if (skillsSection) {
-        observer.observe(skillsSection);
-    } else {
-        setTimeout(animateSkills, 1000);
-    }
-});
-
-const swiper = new Swiper('.swiper', {
-    loop: true,
-    autoplay: { delay: 1000 },
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-});
-</script>
-
 <body>
 <header class="header">
     <h1>Alana Lisbinski - Full-Stack</h1>
 </header>
+
 <section class="sobre-wrapper">
     <div class="sobre-content">
         <div class="sobre-foto">
@@ -64,6 +26,7 @@ const swiper = new Swiper('.swiper', {
         </div>
     </div>
 </section>
+
 <section class="projetos">
     <h2 class="titulo-projetos">Projetos</h2>
     <div class="grid-projetos">
@@ -79,11 +42,12 @@ const swiper = new Swiper('.swiper', {
         </div>
     </div>
 </section>
-<section class="skills-section">
-    <h2 class="titulo-sec-skills">Minhas Skills</h2>
 
+<!-- ===== SEÇÃO SKILLS ADICIONADA AQUI ===== -->
+<section class="skills-section" id="skills">
+    <h2 class="titulo-sec-skills">Minhas Skills</h2>
+    
     <div class="skills-container">
-        
         <div class="skill">
             <div class="skill-info">
                 <span class="skill-name">HTML/CSS</span>
@@ -94,7 +58,6 @@ const swiper = new Swiper('.swiper', {
             </div>
         </div>
         
-    
         <div class="skill">
             <div class="skill-info">
                 <span class="skill-name">JavaScript</span>
@@ -104,7 +67,7 @@ const swiper = new Swiper('.swiper', {
                 <div class="skill-progress" data-level="85"></div>
             </div>
         </div>
-       
+        
         <div class="skill">
             <div class="skill-info">
                 <span class="skill-name">React</span>
@@ -126,9 +89,73 @@ const swiper = new Swiper('.swiper', {
         </div>
     </div>
 </section>
+
+<h2 class="titulo-time">Timeline</h2>
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h3>Evento 1: Evento de tecnologia</h3>
+      <p>Meu primeiro evento de tecnologia foi em 2025 quando fomos
+        visitar um evento de tecnologia na faculade da PUCPR em Toledo, Paraná.
+      </p>
+      <span class="timeline-date">2025</span>
+    </div>
+  </div>
+</div>
+
 <footer class="footer">
     <p>E-mail: contato.alanalisbinski@gmail.com</p>
 </footer>
+
+<script>
+function initSkills() {
+    console.log('🔧 Iniciando animação das skills...');
+    
+    const skillBars = document.querySelectorAll('.skill-progress');
+    console.log('📊 Barras encontradas:', skillBars.length);
+    
+    skillBars.forEach(bar => {
+        const level = bar.getAttribute('data-level');
+        console.log(`🎯 Barra: ${level}%`);
+        
+        bar.style.transition = 'width 1.5s ease-in-out';
+        bar.style.width = level + '%';
+        bar.style.backgroundColor = '#4A7FA7';
+        bar.style.borderRadius = '10px';
+        bar.style.height = '100%';
+        bar.style.display = 'block';
+    });
+}
+
+window.addEventListener('load', function() {
+    console.log('📄 Página carregada');
+    
+    setTimeout(initSkills, 500);
+    
+    window.addEventListener('scroll', function() {
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            const rect = skillsSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                initSkills();
+            }
+        }
+    });
+});
+
+setTimeout(function() {
+    const bars = document.querySelectorAll('.skill-progress');
+    if (bars.length > 0) {
+        bars.forEach(bar => {
+            if (bar.style.width === '') {
+                bar.style.width = bar.getAttribute('data-level') + '%';
+                bar.style.backgroundColor = '#4A7FA7';
+            }
+        });
+    }
+}, 2000);
+
+</script>
 </body>
 </html>
-

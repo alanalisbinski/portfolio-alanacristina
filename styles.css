@@ -1,290 +1,33 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #171F22;
-    color: #748B91;
-}
-
-.header {
-    width: 100%;
-    text-align: center;
-    padding: 25px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.header h1 {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.sobre-wrapper {
-    width: 100%;
+.skills-grid {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
-}
-
-.sobre-content {
-    display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 60px 0 100px 0;
+}
+
+.titulo-sec-skills {
+    text-align: center; 
+    font-size: 32px;
+    color: #4A7FA7;
+    margin-bottom: 40px; 
+}
+
+.skill-item {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    display: flex;
     justify-content: center;
-    gap: 170px;
-    max-width: 1000px;
-    width: 100%;
-    padding: 0 40px;
-}
-
-.sobre-foto img {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.sobre-texto {
-    max-width: 420px;
-    text-align: left;
-}
-
-.sobre-texto h2 {
-    font-size: 32px;
-    color: #748B91;
-    margin-bottom: 15px;
-}
-
-.sobre-texto p {
-    line-height: 1.7;
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-}
-
-.btn-contato {
-    padding: 12px 30px;
-    background: #748B91;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.2s;
-}
-
-.btn-contato:hover {
-    opacity: 0.8;
-}
-
-.titulo-projetos {
-    font-size: 32px;
-    color: #748B91;
-    margin-bottom: 40px;
-}
-
-.projetos {
-    margin-top: 50px;
-    margin-bottom: 150px;
-    text-align: center;
-}
-
-.grid-projetos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 20px;
-}
-
-.projeto-card {
-    background: #1e2629;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-}
-
-.projeto-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.projeto-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #4A7FA7;
-}
-
-.projeto-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.btn-ver {
-    padding: 10px 20px;
-    border: none;
-    background: #4A7FA7;
-    color: #171F22;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-.btn-ver:hover {
-    opacity: 0.8;
-}
-
-.titulo-time {
-    text-align: center;
-    font-size: 32px;
-    color: #4A7FA7;
-    margin-bottom: 40px;
-}
-
-.timeline-background {
-    background-color: #1e2629;
-    padding: 80px 0;
-}
-
-.timeline-section {
-    margin-top: 0;
-    margin-bottom: 100px;
-    text-align: center;
-}
-
-.timeline {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    text-align: left;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3px;
-    background-color: #4A7FA7;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-    width: 50%;
-    padding: 10px 0;
-    padding-right: 50px;
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-    padding-left: 50px;
-    padding-right: 0;
-    text-align: left;
-}
-
-.timeline-dot {
-    position: absolute;
-    top: 20px;
-    width: 15px;
-    height: 15px;
-    background-color: #4A7FA7;
-    border-radius: 50%;
-    border: 3px solid #171F22;
-    z-index: 10;
-}
-
-.timeline-item .timeline-dot {
-    right: -7.5px;
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-    left: -7.5px;
-}
-
-.timeline-content {
-    background-color: #1e2629;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(74, 127, 167, 0.3);
-    transition: 0.3s;
-}
-
-.timeline-content:hover {
-    box-shadow: 0 4px 15px rgba(74, 127, 167, 0.2);
-}
-
-.timeline-content h3 {
-    font-size: 20px;
-    color: #4A7FA7;
-    margin-bottom: 5px;
-}
-
-.timeline-content p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #748B91;
-    margin-top: 10px;
-}
-
-.timeline-date {
-    display: block;
-    font-weight: bold;
-    color: #4A7FA7;
-    font-size: 0.9rem;
-}
-
-@media (max-width: 600px) {
-    .timeline::before {
-        left: 20px;
-        transform: none;
-    }
-
-    .timeline-item, .timeline-item:nth-child(even) {
-        width: 100%;
-        left: 0;
-        padding-left: 50px;
-        padding-right: 0;
-        text-align: left;
-    }
-
-    .timeline-item .timeline-dot, .timeline-item:nth-child(even) .timeline-dot {
-        left: 12.5px;
-        right: auto;
-    }
-}
-
-.footer {
-    text-align: center;
-    padding: 25px 0;
-    margin-top: 80px;
-    background: #171F22;
-}
-
-.footer p {
-    font-size: 1rem;
+    align-items: center;
 }
 
 .skills-section {
     padding: 60px 20px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 80px auto 40px auto;
+    background: transparent;
 }
 
 .titulo-sec-skills {
@@ -292,12 +35,14 @@ body {
     font-size: 32px;
     color: #4A7FA7;
     margin-bottom: 50px;
+    font-weight: bold;
 }
 
 .skills-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
+    padding: 0 20px;
 }
 
 .skill {
@@ -307,12 +52,13 @@ body {
 .skill-info {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    align-items: center;
 }
 
 .skill-name {
     font-weight: bold;
-    color: #748B91;
+    color: #ffffff;
     font-size: 18px;
 }
 
@@ -320,24 +66,29 @@ body {
     font-weight: bold;
     color: #4A7FA7;
     font-size: 16px;
+    background: rgba(74, 127, 167, 0.1);
+    padding: 3px 10px;
+    border-radius: 12px;
 }
 
 .skill-bar {
     width: 100%;
-    height: 12px;
+    height: 14px;
     background-color: #1e2629;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
+    border: 1px solid rgba(74, 127, 167, 0.2);
 }
 
 .skill-progress {
     height: 100%;
-    width: 0;
+    width: 0%;
     background: linear-gradient(90deg, #4A7FA7, #3498db);
     border-radius: 10px;
     position: relative;
     transition: width 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(74, 127, 167, 0.5);
 }
 
 .skill-progress::after {
@@ -350,72 +101,34 @@ body {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.4),
         transparent
     );
-    animation: shine 2s infinite;
+    animation: shine 3s infinite;
+    border-radius: 10px;
 }
 
 @keyframes shine {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
+    0% { transform: translateX(-150%); }
+    100% { transform: translateX(150%); }
 }
 
 @media (max-width: 600px) {
-    .sobre-content {
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 20px;
-        align-items: center;
-        text-align: center;
-    }
-
-    .sobre-foto img {
-        width: 180px;
-        height: 180px;
-        margin: 0 auto;
-    }
-
-    .sobre-texto {
-        max-width: 100%;
-        text-align: center;
-        padding: 0 10px;
-    }
-
-    .sobre-texto h2 {
-        font-size: 26px;
-    }
-
-    .sobre-texto p {
-        font-size: 1rem;
-        text-align: justify;
-    }
-
-    .btn-contato {
-        padding: 10px 25px;
-        font-size: 1rem;
+    .skills-section {
+        padding: 40px 15px;
+        margin: 40px auto;
     }
     
-    .grid-projetos {
-        grid-template-columns: 1fr;
+    .skills-container {
         gap: 25px;
-        padding: 0 15px;
+        padding: 0 10px;
     }
-
-    .projeto-card h3 {
-        font-size: 20px;
+    
+    .skill-name {
+        font-size: 16px;
     }
-
-     .footer {
-        margin-top: 60px;
-        padding: 20px 0;
-    }
-
-    .titulo-projetos {
-        margin-top: 20px;
+    
+    .skill-bar {
+        height: 12px;
     }
 }
