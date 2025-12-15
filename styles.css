@@ -379,18 +379,15 @@ body {
     }
 
     .projeto-card h3 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
-    .footer {
+     .footer {
         margin-top: 60px;
         padding: 20px 0;
     }
+
+    .titulo-projetos {
+        margin-top: 20px;
+    }
 }
-
-
-
-
-
-
-
