@@ -43,49 +43,26 @@
     </div>
 </section>
 
-<!-- ===== SEÇÃO SKILLS ADICIONADA AQUI ===== -->
 <section class="skills-section" id="skills">
     <h2 class="titulo-sec-skills">Minhas Skills</h2>
     
-    <div class="skills-container">
-        <div class="skill">
-            <div class="skill-info">
-                <span class="skill-name">HTML/CSS</span>
-                <span class="skill-percent">95%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-level="95"></div>
-            </div>
+    <div class="skills-grid">
+        <div class="skill-circle" data-percent="95" data-color="#E34F26" data-language="HTML/CSS">
         </div>
         
-        <div class="skill">
-            <div class="skill-info">
-                <span class="skill-name">JavaScript</span>
-                <span class="skill-percent">85%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-level="85"></div>
-            </div>
+        <div class="skill-circle" data-percent="85" data-color="#F7DF1E" data-language="JavaScript">
         </div>
         
-        <div class="skill">
-            <div class="skill-info">
-                <span class="skill-name">React</span>
-                <span class="skill-percent">80%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-level="80"></div>
-            </div>
+        <div class="skill-circle" data-percent="80" data-color="#61DAFB" data-language="React">
         </div>
         
-        <div class="skill">
-            <div class="skill-info">
-                <span class="skill-name">Python</span>
-                <span class="skill-percent">75%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-level="75"></div>
-            </div>
+        <div class="skill-circle" data-percent="75" data-color="#3776AB" data-language="Python">
+        </div>
+
+        <div class="skill-circle" data-percent="70" data-color="#00599C" data-language="C++">
+        </div>
+
+        <div class="skill-circle" data-percent="90" data-color="#F05032" data-language="Git">
         </div>
     </div>
 </section>
@@ -109,53 +86,88 @@
 </footer>
 
 <script>
-function initSkills() {
-    console.log('🔧 Iniciando animação das skills...');
-    
-    const skillBars = document.querySelectorAll('.skill-progress');
-    console.log('📊 Barras encontradas:', skillBars.length);
-    
-    skillBars.forEach(bar => {
-        const level = bar.getAttribute('data-level');
-        console.log(`🎯 Barra: ${level}%`);
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🎯 Iniciando animação dos círculos...');
+    document.querySelectorAll('.skill-circle').forEach(skill => {
+        const percent = skill.getAttribute('data-percent');
+        const color = skill.getAttribute('data-color');
+        const language = skill.getAttribute('data-language');
         
-        bar.style.transition = 'width 1.5s ease-in-out';
-        bar.style.width = level + '%';
-        bar.style.backgroundColor = '#4A7FA7';
-        bar.style.borderRadius = '10px';
-        bar.style.height = '100%';
-        bar.style.display = 'block';
+        skill.innerHTML = `
+            <svg viewBox="0 0 200 200">
+                <circle class="skill-bg" cx="100" cy="100" r="90"></circle>
+                <circle class="skill-progress" 
+                        cx="100" 
+                        cy="100" 
+                        r="90" 
+                        stroke="${color}"
+                        style="stroke-dashoffset: 440;"></circle>
+            </svg>
+            <div class="skill-label">
+                ${language}<br>
+                <span class="skill-percent">${percent}%</span>
+            </div>
+        `;
     });
-}
 
-window.addEventListener('load', function() {
-    console.log('📄 Página carregada');
-    
-    setTimeout(initSkills, 500);
-    
-    window.addEventListener('scroll', function() {
-        const skillsSection = document.getElementById('skills');
-        if (skillsSection) {
-            const rect = skillsSection.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.8) {
-                initSkills();
+    function animateCircles() {
+        console.log('🔄 Animando círculos...');
+        
+        document.querySelectorAll('.skill-circle').forEach(skill => {
+            const percent = skill.getAttribute('data-percent');
+            const progressCircle = skill.querySelector('.skill-progress');
+        
+            const radius = 90;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (percent / 100) * circumference;
+            
+            setTimeout(() => {
+                progressCircle.style.strokeDasharray = circumference;
+                progressCircle.style.strokeDashoffset = offset;
+                
+                // Efeito visual extra
+                skill.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    skill.style.transform = 'scale(1)';
+                }, 300);
+            }, 100);
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log('👀 Seção skills visível!');
+                animateCircles();
+                observer.unobserve(entry.target);
             }
-        }
+        });
+    }, { threshold: 0.3 });
+    
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+        observer.observe(skillsSection);
+    } else {
+        setTimeout(animateCircles, 1000);
+    }
+    
+    window.addEventListener('load', function() {
+        setTimeout(animateCircles, 500);
     });
 });
 
-setTimeout(function() {
-    const bars = document.querySelectorAll('.skill-progress');
-    if (bars.length > 0) {
-        bars.forEach(bar => {
-            if (bar.style.width === '') {
-                bar.style.width = bar.getAttribute('data-level') + '%';
-                bar.style.backgroundColor = '#4A7FA7';
-            }
+setTimeout(() => {
+    const circles = document.querySelectorAll('.skill-progress');
+    if (circles.length > 0 && circles[0].style.strokeDashoffset === '440px') {
+        console.log('🆘 Executando fallback...');
+        document.querySelectorAll('.skill-circle').forEach(skill => {
+            const percent = skill.getAttribute('data-percent');
+            const progressCircle = skill.querySelector('.skill-progress');
+            const offset = 440 - (440 * percent) / 100;
+            progressCircle.style.strokeDashoffset = offset;
         });
     }
-}, 2000);
-
+}, 3000);
 </script>
 </body>
 </html>
