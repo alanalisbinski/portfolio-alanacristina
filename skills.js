@@ -12,8 +12,6 @@
                 }
 
                 textElement.innerText = count + "%";
-                
-                // Preenchimento azul #4A7FA7 sobre o fundo escuro #1e2629
                 circle.style.background = `conic-gradient(
                     #4A7FA7 ${count}%, 
                     #1e2629 ${count}% 100%
@@ -23,6 +21,5 @@
             }, 20);
         });
     }
-
-    // Dispara a animação quando a página termina de carregar
+    
     window.onload = animarSkills;
