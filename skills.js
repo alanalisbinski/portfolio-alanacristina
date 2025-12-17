@@ -1,8 +1,28 @@
-console.log('Seção skills:', document.getElementById('skills'));
-console.log('Barras de progresso:', document.querySelectorAll('.skill-progress').length);
-console.log('Barras de fundo:', document.querySelectorAll('.skill-bar').length);
+    function animarSkills() {
+        const circles = document.querySelectorAll('.progresso-circular');
 
-document.querySelectorAll('.skill-progress').forEach(bar => {
-    bar.style.width = bar.getAttribute('data-level') + '%';
-    bar.style.backgroundColor = 'red';
-});
+        circles.forEach(circle => {
+            const target = parseInt(circle.getAttribute('data-percent'));
+            const textElement = circle.querySelector('.texto-porcentagem');
+            let count = 0;
+
+            const interval = setInterval(() => {
+                if (count >= target) {
+                    clearInterval(interval);
+                }
+
+                textElement.innerText = count + "%";
+                
+                // Preenchimento azul #4A7FA7 sobre o fundo escuro #1e2629
+                circle.style.background = `conic-gradient(
+                    #4A7FA7 ${count}%, 
+                    #1e2629 ${count}% 100%
+                )`;
+
+                count++;
+            }, 20);
+        });
+    }
+
+    // Dispara a animação quando a página termina de carregar
+    window.onload = animarSkills;
