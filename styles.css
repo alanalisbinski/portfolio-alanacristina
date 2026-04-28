@@ -136,7 +136,7 @@ body {
 .projeto-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #4A7FA7;
+    color: #915858;
 }
 
 .projeto-card p {
@@ -149,7 +149,7 @@ body {
 .btn-ver {
     padding: 10px 25px;
     border: none;
-    background: #4A7FA7;
+    background: #A56c6c;
     color: white;
     border-radius: 10px;
     cursor: pointer;
