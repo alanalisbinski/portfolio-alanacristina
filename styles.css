@@ -130,7 +130,7 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
-    border: 1px solid rgba(74, 127, 167, 0.2);
+    border: 1px solid rgba(83, 43, 65, 0.2);
 }
 
 .projeto-card h3 {
@@ -189,7 +189,7 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: conic-gradient(#4A7FA7 0%, #1e2629 0% 100%);
+    background: conic-gradient(#643541 0%, #1e2629 0% 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -326,19 +326,6 @@ body {
     color: #6b3a49;
     font-size: 0.9rem;
     margin-top: 10px;
-}
-
-.footer {
-    text-align: center;
-    padding: 25px 0;
-    margin-top: 80px;
-    background: #1e2629;
-    border-top: 1px solid rgba(74, 127, 167, 0.2);
-}
-
-.footer p {
-    font-size: 1rem;
-    color: #748B91;
 }
 
 @media (max-width: 600px) {
