@@ -303,13 +303,13 @@ body {
 }
 
 .timeline-content:hover {
-    box-shadow: 0 4px 20px rgba(74, 127, 167, 0.3);
-    border-color: rgba(74, 127, 167, 0.5);
+    box-shadow: 0 4px 20px rgba(148, 64, 103, 0.3);
+    border-color: rgba(143, 63, 90, 0.5);
 }
 
 .timeline-content h3 {
     font-size: 20px;
-    color: #4A7FA7;
+    color: #774458;
     margin-bottom: 10px;
 }
 
@@ -323,7 +323,7 @@ body {
 .timeline-date {
     display: block;
     font-weight: bold;
-    color: #4A7FA7;
+    color: #6b3a49;
     font-size: 0.9rem;
     margin-top: 10px;
 }
