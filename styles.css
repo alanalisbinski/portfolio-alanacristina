@@ -255,7 +255,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 3px;
-    background-color: #4A7FA7;
+    background-color: #664254;
 }
 
 .timeline-item {
@@ -294,10 +294,10 @@ body {
 }
 
 .timeline-content {
-    background-color: rgba(30, 38, 41, 0.8);
+    background-color: rgba(173, 141, 141, 0.8);
     padding: 25px;
     border-radius: 10px;
-    border: 1px solid rgba(74, 127, 167, 0.3);
+    border: 1px solid rgba(78, 42, 51, 0.3);
     transition: 0.3s;
     backdrop-filter: blur(10px);
 }
